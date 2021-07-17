@@ -8,33 +8,41 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="js/battle.js" defer></script>
     <link rel="stylesheet" href="css/battle.css">
+    
 </head>
 <body>
-    <h1>Battle Page</h1>
-    <main id="parent">
-    <div id="pikachu">
-        <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c325.png">
-        <h2>Pikachu<h2>
-        <p id="compHP">Pikachu's Current Health: 100</p>
-        <progress id="compHPBAR" value="100" max="100"></progress>
-        
-    </div>
-    <div id="buttoncontainer">
-        <div class="buttonwrapper">
-            <button id="Attack1" type="button" onclick="getInfo(this);">QUICK ATTACK</button>
+    <h1>Battle Area</h1>
+    <main id="wrapper">
+        <div id="pikachu">
+            <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c325.png">
+            <h2>Pikachu<h2>
+            <p id="compHP">Pikachu's Current Health: 100</p>
+            <progress id="compHPBAR" value="100" max="100"></progress>
         </div>
-        <div class="buttonwrapper">
-            <button id="Attack2" type="button" onclick="getInfo(this);"></button>
+        <div id="parent">
+            <h2>PLAYER POKEMON</h2>
+            <div id="playerHealth">
+                <div id="pkmTitle"></div>
+            <p id="myHP">Your Current Health: 100</p>
+            <progress id="myHPBAR" value="100" max="100"></progress>
+            </div>
+            <div id="buttoncontainer">
+                <div class="buttonwrapper">
+                    <button id="Attack1" type="button" onclick="getInfo(this);"></button>
+                </div>
+                <div class="buttonwrapper">
+                    <button id="Attack2" type="button" onclick="getInfo(this);"></button>
+                </div>
+                <div class="buttonwrapper">
+                    <button id="Attack3" type="button" onclick="getInfo(this);"></button>
+                </div>
+                <div class="buttonwrapper">
+                    <button id="Attack4" type="button" onclick="getInfo(this);"></button>
+                </div>
+                </div>
         </div>
-        <div class="buttonwrapper">
-            <button id="Attack3" type="button" onclick="getInfo(this);"></button>
-        </div>
-        <div class="buttonwrapper">
-            <button id="Attack4" type="button" onclick="getInfo(this);"></button>
-        </div>
-    </div>
-    <p id="myHP">Your Current Health: 100</p>
-    <progress id="myHPBAR" value="100" max="100"></progress>
-</main>
+
+
+    </main>
 </body>
 </html>

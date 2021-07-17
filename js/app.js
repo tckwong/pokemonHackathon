@@ -11,7 +11,7 @@ function getInfo(element) {
         pokemonName : pokeName,
         mypokeAttack : "quick attack",
         userMaxHealth : 100,
-        userCurrentHealth : 100 
+        userCurrentHealth : 100
     }
         
     // if(document.getElementById('charBtn').clicked == true) {
