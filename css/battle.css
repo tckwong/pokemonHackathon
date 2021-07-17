@@ -11,6 +11,7 @@
     grid-template-columns:1fr 1fr;
     margin-top: 100px;
     width: 100vw;
+    justify-items: center;
 }
 
 body{
@@ -21,7 +22,7 @@ img{
     height: 20vh;
 }
 h1{
-    margin-left: 50%;
+    margin-left: 40%;
 }
 p ,h2{
     width: 10vw;
