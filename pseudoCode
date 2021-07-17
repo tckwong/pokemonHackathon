@@ -1,0 +1,41 @@
+Home page - make a function for the buttons to choose 
+which pokemon the user wants
+Thatll create a array of cookies
+That then links you to the battle page
+
+
+1. Each Pokemon could have a unique set of attacks - 4 separate buttons
+2. Random range of damage for each attack -> 
+
+function storeBattleState()
+    -> 
+
+function playerTurn()
+    -(Math( (Math.random) ->
+    -reduce computerCurrentHealth - damage
+    -updateHealth();
+
+function updateHealthPlayer()
+    -> (attack - current hp)
+-if current hp < 0 {
+    alert player, end game
+} else {
+    computerTurn()
+}
+
+function updateHealthComp(){
+
+}
+
+
+function compTurn() {
+    arrayofMoves[ice beam, leaf attack....]
+    generate random number for array index
+    generate random number for damage
+    updateHealth()
+}
+
+
+
+
+
