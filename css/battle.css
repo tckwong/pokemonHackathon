@@ -19,18 +19,35 @@ body{
 }
 img{
     width: 20vw;
-    height: 20vh;
+    height: 30vh;
 }
 h1{
     margin-left: 40%;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-size: 4rem;
 }
 p ,h2{
     width: 10vw;
 }
+
 #buttoncontainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
     width: 10vw;
 }
 
+button {
+    padding: 3vh 0;
+    width: 8vw;
+    background-color: blanchedalmond;
+}
 
+button:hover {
+    border-style: groove;
+    background-color: rgb(247, 208, 150);
+}
 
 
