@@ -154,7 +154,6 @@ function computerTurn() {
     console.log("Computer Choose move " + pokemonCompState.attack[compAttIndex].attackName);
     myHPBAR.value -= pokemonCompState.attack[compAttIndex].attackValue;
     cookieParse.userCurrentHealth = cookieParse.userCurrentHealth - pokemonCompState.attack[compAttIndex].attackValue;
-    console.log(cookieParse.userCurrentHealth);
     compHPBAR.value -= pokemonCompState.attack[compAttIndex].attackValue;
 
     //Update player currentHealth on DOM
@@ -212,6 +211,7 @@ if(cookieParse.pokemonName == "Bulbasaur") {
         bulbMoves[move].available.remainingAttacks -= 1;
         button1.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
     }
+
     function reduceAvailablility2(move) {
         bulbMoves[move].available.remainingAttacks -= 1;
         button2.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
