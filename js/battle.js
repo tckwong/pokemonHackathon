@@ -74,7 +74,7 @@ function playerTurn() {
     console.log("Computer Current Health: "+cookieParseComp.computerCurrentHealth);
 
     //Update comp currentHealth on DOM
-    document.getElementById('compHP').innerText = "Comp Current Health: " + cookieParseComp.computerCurrentHealth;
+    document.getElementById('compHP').innerText = "Pikachu Current Health: " + cookieParseComp.computerCurrentHealth;
 
     if (cookieParseComp.computerCurrentHealth <= 0) {
         alert("Game ended, you WON!");
@@ -104,7 +104,7 @@ function playerTurn() {
 }
 // PLAYER ATTACK THREE
 var attackClick = document.getElementById('Attack3');
-attackClick.addEventListener('click', playerTurn);
+    attackClick.addEventListener('click', playerTurn);
 
 function playerTurn() {
     
@@ -207,44 +207,20 @@ if(cookieParse.pokemonName == "Bulbasaur") {
         }
     ]
 
-    function reduceAvailablility1(move) {
-        bulbMoves[move].available.remainingAttacks -= 1;
-        button1.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
-    }
-
-    function reduceAvailablility2(move) {
-        bulbMoves[move].available.remainingAttacks -= 1;
-        button2.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
-    }
-    function reduceAvailablility3(move) {
-        bulbMoves[move].available.remainingAttacks -= 1;
-        button3.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
-    }
-    function reduceAvailablility4(move) {
-        bulbMoves[move].available.remainingAttacks -= 1;
-        button4.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
+    function reduceAvailablility(move, element) {
+        if(bulbMoves[move].available.remainingAttacks > 0) {
+            bulbMoves[move].available.remainingAttacks -= 1;
+            element.innerText = bulbMoves[move].name+" "+bulbMoves[move].available.remainingAttacks+" "+"/"+bulbMoves[move].available.totalAttacks;
+        }else {
+            throw new Error("NO MORE MOVES");
+        }
     }
 
     button1.innerText = bulbMoves[0].name+" "+bulbMoves[0].available.remainingAttacks+" "+"/"+bulbMoves[0].available.totalAttacks;
-    button1.addEventListener('click', function() {
-        reduceAvailablility1(0);
-    });
-    
     button2.innerText = bulbMoves[1].name+" "+bulbMoves[1].available.remainingAttacks+" "+"/"+bulbMoves[1].available.totalAttacks;
-    button2.addEventListener('click', function() {
-        reduceAvailablility2(1);
-    });
-
     button3.innerText = bulbMoves[2].name+" "+bulbMoves[2].available.remainingAttacks+" "+"/"+bulbMoves[2].available.totalAttacks;
-    button3.addEventListener('click', function() {
-        reduceAvailablility3(2);
-    });
-
     button4.innerText = bulbMoves[3].name+" "+bulbMoves[3].available.remainingAttacks+" "+"/"+bulbMoves[3].available.totalAttacks;
-    button4.addEventListener('click', function() {
-        reduceAvailablility4(3);
-    });
-    
+   
 }else if(cookieParse.pokemonName == "Charmander") {
     // CHARMANDER MOVESET
     var charMoves = [
@@ -278,39 +254,20 @@ if(cookieParse.pokemonName == "Bulbasaur") {
         }
     ]
 
-    function reduceAvailablility(move) {
+    function reduceAvailablility(move,element) {
+        if (charMoves[move].available.remainingAttacks > 0) {
         charMoves[move].available.remainingAttacks -= 1;
-        button1.innerText = charMoves[move].name+" "+charMoves[move].available.remainingAttacks+" "+"/"+charMoves[move].available.totalAttacks;
-    }
-    function reduceAvailablility2(move) {
-        charMoves[move].available.remainingAttacks -= 1;
-        button2.innerText = charMoves[move].name+" "+charMoves[move].available.remainingAttacks+" "+"/"+charMoves[move].available.totalAttacks;        
-    }
-    function reduceAvailablility3(move) {
-        charMoves[move].available.remainingAttacks -= 1;
-        button3.innerText = charMoves[move].name+" "+charMoves[move].available.remainingAttacks+" "+"/"+charMoves[move].available.totalAttacks;        
-    }
-    function reduceAvailablility4(move) {
-        charMoves[move].available.remainingAttacks -= 1;
-        button4.innerText = charMoves[move].name+" "+charMoves[move].available.remainingAttacks+" "+"/"+charMoves[move].available.totalAttacks;        
+        element.innerText = charMoves[move].name+" "+charMoves[move].available.remainingAttacks+" "+"/"+charMoves[move].available.totalAttacks;
+        }else {
+            throw new Error("NO MORE MOVES");
+        }
     }
 
     button1.innerText = charMoves[0].name+" "+charMoves[0].available.remainingAttacks+" "+"/"+charMoves[0].available.totalAttacks;
-    button1.addEventListener('click', function() {
-        reduceAvailablility(0);
-    });
     button2.innerText = charMoves[1].name+" "+charMoves[1].available.remainingAttacks+" "+"/"+charMoves[1].available.totalAttacks;
-    button2.addEventListener('click', function() {
-        reduceAvailablility2(1);
-    });
     button3.innerText = charMoves[2].name+" "+charMoves[2].available.remainingAttacks+" "+"/"+charMoves[2].available.totalAttacks;
-    button3.addEventListener('click', function() {
-        reduceAvailablility3(2);
-    });
     button4.innerText = charMoves[3].name+" "+charMoves[3].available.remainingAttacks+" "+"/"+charMoves[3].available.totalAttacks;
-    button4.addEventListener('click', function() {
-        reduceAvailablility4(3);
-    });
+
 
 }else if(cookieParse.pokemonName == "Squirtle") {
     // SQUIRTLE MOVESET
@@ -345,37 +302,18 @@ if(cookieParse.pokemonName == "Bulbasaur") {
         }
     ]
 
-    function reduceAvailablility(move) {
-        squirtleMoves[move].available.remainingAttacks -= 1;
-        button1.innerText = squirtleMoves[move].name+" "+squirtleMoves[move].available.remainingAttacks+" "+"/"+squirtleMoves[move].available.totalAttacks;
-    }
-    function reduceAvailablility2(move) {
-        squirtleMoves[move].available.remainingAttacks -= 1;
-        button2.innerText = squirtleMoves[move].name+" "+squirtleMoves[move].available.remainingAttacks+" "+"/"+squirtleMoves[move].available.totalAttacks;
-    }
-    function reduceAvailablility3(move) {
-        squirtleMoves[move].available.remainingAttacks -= 1;
-        button3.innerText = squirtleMoves[move].name+" "+squirtleMoves[move].available.remainingAttacks+" "+"/"+squirtleMoves[move].available.totalAttacks;
-    }
-    function reduceAvailablility4(move) {
-        squirtleMoves[move].available.remainingAttacks -= 1;
-        button4.innerText = squirtleMoves[move].name+" "+squirtleMoves[move].available.remainingAttacks+" "+"/"+squirtleMoves[move].available.totalAttacks;
+    function reduceAvailablility(move, element) {
+        if (squirtleMoves[move].available.remainingAttacks > 0) {
+            squirtleMoves[move].available.remainingAttacks -= 1;
+            element.innerText = squirtleMoves[move].name+" "+squirtleMoves[move].available.remainingAttacks+" "+"/"+squirtleMoves[move].available.totalAttacks;
+        }else {
+            throw new Error("NO MORE MOVES");
+        }
     }
 
     button1.innerText = squirtleMoves[0].name+" "+squirtleMoves[0].available.remainingAttacks+" "+"/"+squirtleMoves[0].available.totalAttacks;
-    button1.addEventListener('click', function() {
-        reduceAvailablility(0);
-    });
     button2.innerText = squirtleMoves[1].name+" "+squirtleMoves[1].available.remainingAttacks+" "+"/"+squirtleMoves[1].available.totalAttacks;
-    button2.addEventListener('click', function() {
-        reduceAvailablility2(1);
-    });
     button3.innerText = squirtleMoves[2].name+" "+squirtleMoves[2].available.remainingAttacks+" "+"/"+squirtleMoves[2].available.totalAttacks;
-    button3.addEventListener('click', function() {
-        reduceAvailablility3(2);
-    });
     button4.innerText = squirtleMoves[3].name+" "+squirtleMoves[3].available.remainingAttacks+" "+"/"+squirtleMoves[3].available.totalAttacks;
-    button4.addEventListener('click', function() {
-        reduceAvailablility4(3);
-    });
+ 
 }

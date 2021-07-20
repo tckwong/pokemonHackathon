@@ -19,6 +19,7 @@
             <p id="compHP">Pikachu's Current Health: 100</p>
             <progress id="compHPBAR" value="100" max="100"></progress>
         </div>
+      
         <div id="parent">
             <h2>PLAYER POKEMON</h2>
             <div id="playerHealth">
@@ -28,16 +29,16 @@
             </div>
             <div id="buttoncontainer">
                 <div class="buttonwrapper">
-                    <button id="Attack1" type="button"></button>
+                    <button id="Attack1" type="button" onclick="reduceAvailablility(0,this);" ></button>
                 </div>
                 <div class="buttonwrapper">
-                    <button id="Attack2" type="button"></button>
+                    <button id="Attack2" type="button" onclick="reduceAvailablility(1,this);"></button>
                 </div>
                 <div class="buttonwrapper">
-                    <button id="Attack3" type="button"></button>
+                    <button id="Attack3" type="button" onclick="reduceAvailablility(2,this);"></button>
                 </div>
                 <div class="buttonwrapper">
-                    <button id="Attack4" type="button"></button>
+                    <button id="Attack4" type="button" onclick="reduceAvailablility(3,this);"></button>
                 </div>
                 </div>
         </div>

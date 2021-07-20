@@ -50,4 +50,8 @@ button:hover {
     background-color: rgb(247, 208, 150);
 }
 
+#battleLog {
+    border: 1px solid black;
+    width: 100%;
+}
 
